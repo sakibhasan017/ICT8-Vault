@@ -5,8 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node --no-warnings ./node_modules/vite/bin/vite.js build",
-  "prebuild": "chmod -R +x node_modules/.bin 2>/dev/null || true",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
