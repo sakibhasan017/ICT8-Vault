@@ -22,7 +22,7 @@ const sendScheduledNotifications = async () => {
       const eventSection = item.section; 
 
       if (
-        (deadline === tomorrow && (hour===17 && minute===54)) ||
+        (deadline === tomorrow && hour===15) ||
         (deadline === today && hour === 7)
       ) {
         users.forEach(user => {
