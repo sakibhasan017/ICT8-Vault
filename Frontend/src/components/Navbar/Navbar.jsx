@@ -123,7 +123,7 @@ const Navbar = () => {
             
             {isLatestSemesterOpen && (
               <div 
-                className="dropdown-content latest-semester-dropdown"
+                className="dropdown-content"
                 onMouseEnter={() => clearTimeout(timeoutRef.current)}
               >
                 {courseData[latestSemester.value].map(course => (
