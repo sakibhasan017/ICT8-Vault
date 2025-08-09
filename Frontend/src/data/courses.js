@@ -75,6 +75,7 @@ const courseData = {
     { code: 'ICE1106', name: 'Physics Lab', folderId: '1kmJ4uIfb9dByWxYYNDxEtQeB_J3w6Hsa', teacherId: null ,videoId: [],ExtraId:[] },
     { code: 'ICE1107', name: 'Mathematics', folderId: '1Mfcd1SAhqaL1dfVQ6QmL1cvXLRZGQwck', teacherId: ['T003'] ,videoId: [],ExtraId:[]},
     { code: 'ICE1109', name: 'Functional English & Presentation Skills', folderId: '1SRo3yL4BPjpGLJFTacqwDMeiOmqlLJlC', teacherId: ['T004'] ,videoId: [],ExtraId:[]},
+    { code: '&', name: 'Q U E S T I O N S', folderId: '1VjFbJCDW6pv03_n0JrtmwhGfyRb_GWgi', teacherId: null,videoId: [],ExtraId:[] },
   ],
   semester2: [
     { code: 'ICE1201', name: 'Object Oriented Design & Programming', folderId: '1uVh2rSgABdRSRqzTsu9zz2ASvE8A2cK7', teacherId: ['T011'] ,videoId: [],ExtraId:[]},
@@ -85,7 +86,7 @@ const courseData = {
     { code: 'ICE1207', name: 'Foreign Language', folderId: '15pBC4LiyX-cXTB1yiWtnvezYNOlY0SoZ', teacherId: ['T028'] ,videoId: [],ExtraId:[] },
     { code: 'ICE1209', name: 'Financial and Managerial Accounting', folderId: '1hGykVoNbb7i_Ijv7BMxW34YVXZ8cyobi', teacherId: ['T029'] ,videoId: [],ExtraId:[]},
     { code: 'GED2211', name: 'Bangladesh Studies', folderId: '1ro4NwIK_xkUtph28lPXeh-Mny_lggbwa', teacherId: ['T005'] ,videoId: [],ExtraId:[]},
-    { code: '*', name: 'QUESTIONS', folderId: '1xQyiFls11hD1yXBNFKo5fJFW8BoVXhus', teacherId: null,videoId: [],ExtraId:[] },
+    { code: '*', name: 'Q U E S T I O N S', folderId: '1xQyiFls11hD1yXBNFKo5fJFW8BoVXhus', teacherId: null,videoId: [],ExtraId:[] },
   ],
   semester3: [
     { code: 'ICE2101', name: 'Object Oriented Design & Programming - II', folderId: '1gZtjATcYnTmCKH7Wl5cGwtRqfuuVxLTE', teacherId: ['T011'] ,videoId: [],ExtraId:[]},
