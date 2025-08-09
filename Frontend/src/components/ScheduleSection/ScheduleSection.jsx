@@ -66,7 +66,7 @@ const ScheduleSection = () => {
           <div className="responsive-table-exam">
             <table>
               <thead>
-                <tr><th>Course</th><th>Topic</th><th>Date</th><th>Time</th><th>Section</th></tr>
+                <tr><th>Course</th><th>Topic</th><th>Date</th><th>Time</th><th>Exam Type</th><th>Section</th></tr>
               </thead>
               <tbody>
                 {filterBySection(exams).map((e, i) => (
@@ -79,6 +79,7 @@ const ScheduleSection = () => {
                     </td>
                     <td>{e.date}</td>
                     <td>{e.time}</td>
+                    <td>{e.examType}</td>
                     <td>
                       <span className={`section-badges section-${e.section.toLowerCase()}`}>{e.section}</span>
                     </td>

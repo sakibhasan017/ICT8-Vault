@@ -6,6 +6,10 @@ import Footer from "./components/Footer/Footer.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import CoursePage from "./pages/CoursePage/CoursePage.jsx";
 import GeneralResources from "./pages/GeneralResources/GeneralResources.jsx";
+import More from "./pages/More/More.jsx";
+import Performance from "./pages/Performance/Performance.jsx";
+import Memories from "./pages/Memories/Memories.jsx";
+import Achievements from "./pages/Achievements/Achievements.jsx";
 
 const App = () => {
   return (
@@ -16,6 +20,10 @@ const App = () => {
         <Route path="/resources" element={<Resources/>} />
         <Route path="/resources/:courseId" element={<CoursePage/>}/>
         <Route path="/general-resources" element={<GeneralResources/>}/>
+        <Route path="/more" element={<More/>}/>
+        <Route path="/performance-tracker" element={<Performance/>}/>
+        <Route path="/memories" element={<Memories/>}/>
+        <Route path="/achievements" element={<Achievements/>}/>
       </Routes>
       <Footer/>
     </Router>

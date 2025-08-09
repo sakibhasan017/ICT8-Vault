@@ -10,6 +10,7 @@ const addExam = async(req,res)=>{
     date: req.body.date,
     time: req.body.time,
     section: req.body.section,
+    examType:req.body.examType,
     additional: req.body.additional
 
   })

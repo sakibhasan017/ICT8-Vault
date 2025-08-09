@@ -35,6 +35,7 @@ const NoticeSection = () => {
         {notices.map(notice => (
           <li key={notice._id} className={`notice-card notice-sec-${notice.section.toLowerCase()}`}>
             <h4>{notice.title}</h4>
+            {notice.extraInfo && <p>{notice.extraInfo}</p>}
             {notice.date && <p>Date: {notice.date}</p>}
             <span className="section-badge">Section {notice.section}</span>
             {notice.additional && (

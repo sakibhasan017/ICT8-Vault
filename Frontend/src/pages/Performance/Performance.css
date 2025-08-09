@@ -1,0 +1,95 @@
+.per123-performance-container {
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.per123-page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(0,255,255,0.6);
+}
+
+.per123-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0,255,255,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.per123-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0,255,255,0.4);
+}
+
+.per123-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #00f2fe;
+}
+
+.per123-input-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.per123-performance-container input {
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+.pre123-slt{
+  flex: 1;
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background: hsl(216, 91%, 66%);
+  color: white;
+}
+
+.per123-performance-container input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.per123-performance-container button {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.per123-performance-container button:hover {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  transform: scale(1.05);
+}
+
+.per123-p{
+  white-space: pre-line;
+  background: rgba(0,0,0,0.3);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+}
+
+.per123-disclaimer {
+  font-size: 0.85rem;
+  color: #ffb300;
+  margin-bottom: 0.5rem;
+}

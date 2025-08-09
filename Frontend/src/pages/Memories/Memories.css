@@ -1,0 +1,22 @@
+.undermaint-123-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #ffecd2 0%, #f4eae6 100%);
+  font-family: "Poppins", sans-serif;
+}
+
+.undermaint-123-text {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ff5733;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  animation: undermaint-123-pulse 1.5s infinite;
+}
+
+@keyframes undermaint-123-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+  100% { transform: scale(1); opacity: 1; }
+}

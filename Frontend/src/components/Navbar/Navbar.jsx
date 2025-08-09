@@ -217,7 +217,7 @@ const Navbar = () => {
               </div>
             )}
           </li>
-          <li><Link to="/about" onClick={() => setIsMobileMenuOpen(false)}>About Us</Link></li>
+          <li><Link to="/more" onClick={() => setIsMobileMenuOpen(false)}>More</Link></li>
         </ul>
       </div>
     </nav>

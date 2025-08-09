@@ -6,6 +6,7 @@ import fs from 'fs'
 const addNotice = async(req,res)=>{
   const notice = new noticeModel({
       title:req.body.title,
+      extraInfo:req.body.extraInfo,
       date:req.body.date,
       section:req.body.section,
       additional:req.body.additional

@@ -6,6 +6,7 @@ const examSchema =new mongoose.Schema({
     date: {type:String,required:true},
     time: {type:String,required:true},
     section: {type:String,required:true},
+    examType: {type:String},
     additional: {type:String}
   })
 
