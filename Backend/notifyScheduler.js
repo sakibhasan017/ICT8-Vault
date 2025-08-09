@@ -1,7 +1,7 @@
 import axios from 'axios';
 import notifyModel from './models/notifyModel.js';
 import sendMail from './utils/mailer.js';
-import moment from 'moment';
+import moment from 'moment-timezone';
 
 const sendScheduledNotifications = async () => {
   try {
@@ -22,7 +22,7 @@ const sendScheduledNotifications = async () => {
       const eventSection = item.section; 
 
       if (
-        (deadline === tomorrow && (hour===16 && minute===30)) ||
+        (deadline === tomorrow && (hour===16 && minute===37)) ||
         (deadline === today && hour === 7)
       ) {
         users.forEach(user => {

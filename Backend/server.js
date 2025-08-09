@@ -27,8 +27,8 @@ app.use("/api/notify",notifyRouter);
 app.use("/api/test",testRoute);
 
 
-cron.schedule('30 16 * * *', () => {
-  console.log("Running 4.30PM notifier...");
+cron.schedule('37 16 * * *', () => {
+  console.log("Running 4.37PM notifier...");
   sendScheduledNotifications();
 });
 
