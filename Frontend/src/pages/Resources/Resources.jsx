@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import courseData from "../../data/courses.js"
+import courses from "../../data/courses.js"
 import "./Resources.css";
+
+const {courseData} = courses;
 
 const Resources = () => {
   const [openSemester, setOpenSemester] = useState(null);

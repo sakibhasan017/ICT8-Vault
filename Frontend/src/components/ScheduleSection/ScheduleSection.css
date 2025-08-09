@@ -112,4 +112,25 @@ th {
 }
 
 
-
+@media (max-width: 768px) {
+  .responsive-table-exam table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .responsive-table-exam th,
+  .responsive-table-exam td {
+    padding: 4px;
+    font-size: 12px;
+    word-wrap: break-word;
+    text-align: center;
+  }
+  .responsive-table-exam .topic-link {
+    font-size: 11px;
+    padding: 3px 5px;
+  }
+  .responsive-table-exam .section-badges {
+    font-size: 11px;
+    padding: 2px 4px;
+  }
+}

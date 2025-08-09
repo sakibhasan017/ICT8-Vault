@@ -13,7 +13,7 @@ const Footer = () => {
         <div className="footer-section links">
           <h4>Useful Links</h4>
           <ul>
-            <li><a href="https://www.facebook.com/groups/YOUR_GROUP" target="_blank" rel="noopener noreferrer">📘 Facebook Group</a></li>
+            <li><a href="https://www.facebook.com/groups/1072097740096634" target="_blank" rel="noopener noreferrer">📘 Facebook Group</a></li>
             <li><a href="https://ucam.bup.edu.bd" target="_blank" rel="noopener noreferrer">🧾 UCAM Login</a></li>
             <li><a href="https://bup.edu.bd" target="_blank" rel="noopener noreferrer">🌐 BUP Official Website</a></li>
           </ul>
@@ -22,10 +22,10 @@ const Footer = () => {
         <div className="footer-section maintainers">
           <h4>Maintained By</h4>
           <ul>
-            <li>👨‍💻 Sakib</li>
-            <li>🧑‍💻 Ornob</li>
-            <li>👨‍💻 Rahin</li>
-            <li>🧑‍💻 Shahrukh</li>
+            <li><a href="https://www.facebook.com/GoldenBoySakibb" target="_blank" rel="noopener noreferrer">👨‍💻 Sakib</a></li>
+            <li><a href="https://www.facebook.com/shihaful.islam.ornob" target="_blank" rel="noopener noreferrer">🧑‍💻 Ornob</a></li>
+            <li><a href="https://www.facebook.com/sadat.rahin" target="_blank" rel="noopener noreferrer">👨‍💻 Rahin</a></li>
+            <li><a href="https://www.facebook.com/hrudro10" target="_blank" rel="noopener noreferrer">🧑‍💻 Shahrukh</a></li>
           </ul>
         </div>
       </div>

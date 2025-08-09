@@ -63,7 +63,7 @@ const ScheduleSection = () => {
       <div className="schedule-columns" id='exam'>
         <div className="column">
           <h3>Exam Schedule</h3>
-          <div className="responsive-table">
+          <div className="responsive-table-exam">
             <table>
               <thead>
                 <tr><th>Course</th><th>Topic</th><th>Date</th><th>Time</th><th>Section</th></tr>
