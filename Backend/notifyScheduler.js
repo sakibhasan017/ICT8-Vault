@@ -8,8 +8,9 @@ const sendScheduledNotifications = async () => {
     const response = await axios.get(`${process.env.VITE_API_BASE_URL}/api/calendar/list`);
     const calendarData = response.data.message;
 
-    const now = moment();
+    const now = moment().tz('Asia/Dhaka');
     const hour = now.hour();
+    const minute = now.minute();
     const today = now.format('YYYY-MM-DD');
     const tomorrow = now.clone().add(1, 'day').format('YYYY-MM-DD');
 
@@ -21,7 +22,7 @@ const sendScheduledNotifications = async () => {
       const eventSection = item.section; 
 
       if (
-        (deadline === tomorrow && hour >= 15) ||
+        (deadline === tomorrow && (hour===16 && minute===30)) ||
         (deadline === today && hour === 7)
       ) {
         users.forEach(user => {
