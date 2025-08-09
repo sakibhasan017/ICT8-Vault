@@ -102,6 +102,7 @@ const courseData = {
   ],
   semester7: [
     { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: null, teacherId: ['T007'] },
+    { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: null, teacherId: ['T007'] }
   ]
 };
 

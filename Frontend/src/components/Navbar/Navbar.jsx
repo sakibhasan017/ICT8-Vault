@@ -81,7 +81,7 @@ const Navbar = () => {
       navigate('/resources');
     }
   };
-
+  
   return (
     <nav className="navbar">
       <button className="hamburger-menu" onClick={toggleMobileMenu}>
@@ -110,7 +110,7 @@ const Navbar = () => {
             <div 
               onClick={() => {
                 setIsLatestSemesterOpen(!isLatestSemesterOpen);
-                setIsMobileMenuOpen(false);
+                
               }}
               onMouseEnter={() => {
                 clearTimeout(timeoutRef.current);
