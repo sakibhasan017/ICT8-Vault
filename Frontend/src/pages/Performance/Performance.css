@@ -50,6 +50,7 @@
   outline: none;
   background: rgba(255,255,255,0.1);
   color: white;
+  margin-right: 5px;
 }
 
 .pre123-slt{
@@ -74,6 +75,7 @@
   cursor: pointer;
   font-weight: bold;
   transition: background 0.3s ease, transform 0.2s ease;
+  margin-right: 5px;
 }
 
 .per123-performance-container button:hover {
@@ -92,4 +94,82 @@
   font-size: 0.85rem;
   color: #ffb300;
   margin-bottom: 0.5rem;
+}
+
+
+@media (max-width: 768px) {
+  .per123-performance-container {
+    padding: 1rem;
+  }
+
+  .per123-page-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .per123-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .per123-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .per123-input-row {
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 15px rgba(0,255,255,0.2);
+}
+
+
+  .per123-performance-container input,
+  .pre123-slt {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    margin-bottom: 5px;
+  }
+
+  .per123-performance-container button {
+    width: 100%;
+    padding: 0.6rem;
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+
+  .per123-p {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .per123-disclaimer {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .per123-page-title {
+    font-size: 1.6rem;
+  }
+
+  .per123-card h2 {
+    font-size: 1.2rem;
+  }
+
+  .per123-p {
+    font-size: 0.85rem;
+  }
+
+  .per123-performance-container button {
+    font-size: 0.95rem;
+    padding: 0.5rem;
+    margin-bottom: 5px;
+  }
 }

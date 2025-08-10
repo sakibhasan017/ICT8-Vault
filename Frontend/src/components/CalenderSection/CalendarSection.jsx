@@ -86,51 +86,56 @@ const CalendarSection = () => {
       </div>
 
       {showPopup && (
-        <div className="popup-overlay">
-          <div className="popup-form">
-            <h3>Get Notified by Email</h3>
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                placeholder="Your Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+  <div className="popup-overlay">
+    <div className="popup-form">
+      <h3>Get Notified by Email</h3>
 
-              
-              <select
-                value={section}
-                onChange={(e) => setSection(e.target.value)}
-                required
-              >
-                <option value="">Select Section</option>
-                <option value="A">Section A</option>
-                <option value="B">Section B</option>
-                
-              </select>
+      <p className="notify-disclaimer">
+        ⚠️ Disclaimer: This notification service uses multiple servers.  
+        If a server is down, notifications may not be delivered.  
+        Please do not rely 100% on this feature.
+      </p>
 
-              <button type="submit">Submit</button>
-              
-              
-              {message && (
-                <p className={isSuccess ? 'message success' : 'message error'}>
-                  {message}
-                </p>
-              )}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Your Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          required
+        />
+        <input
+          type="email"
+          placeholder="Your Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
 
-              <button type="button" onClick={closePopup}>Close</button>
-            </form>
-          </div>
-        </div>
-      )}
+        <select
+          value={section}
+          onChange={(e) => setSection(e.target.value)}
+          required
+        >
+          <option value="">Select Section</option>
+          <option value="A">Section A</option>
+          <option value="B">Section B</option>
+        </select>
+
+        <button type="submit">Submit</button>
+
+        {message && (
+          <p className={isSuccess ? 'message success' : 'message error'}>
+            {message}
+          </p>
+        )}
+
+        <button type="button" onClick={closePopup}>Close</button>
+      </form>
+    </div>
+  </div>
+)}
+
 
       <div className="legend">
         <span className="legend-item section-a">Section A</span>
