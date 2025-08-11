@@ -34,6 +34,12 @@ const More = () => {
           <p>Celebrate milestones and successes.</p>
         </div>
 
+        <div className="more-card" onClick={() => navigate("/feedback")}>
+          <h2>🏆 Share Your Thoughts</h2>
+          <p>Share your ideas, suggestions, or concerns to help us improve.</p>
+        </div>
+
+
       </div>
     </div>
   );

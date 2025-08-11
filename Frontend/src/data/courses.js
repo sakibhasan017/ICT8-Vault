@@ -121,20 +121,26 @@ const courseData = {
     { code: 'ICE3110', name: 'Telecommunication Systems Laboratory', folderId: '1FDNEffdqTphI5rMZkFPlg3VFv7L2Ydu8', teacherId: ['T014','T022'] ,videoId: [],ExtraId:[]},
   ],
   semester6: [
-    { code: 'ICE3201', name: 'Microprocessor and Computer Architecture', folderId: '1O4yP7T-1mILLnZjP_JXP4LGIqvivh5Zw', teacherId: ['T023'] ,videoId: ['V001'],ExtraId:[]},
+    { code: 'ICE3201', name: 'Microprocessor and Computer Architecture', folderId: '1O4yP7T-1mILLnZjP_JXP4LGIqvivh5Zw', teacherId: ['T023'] ,videoId: [],ExtraId:[]},
     { code: 'ICE3202', name: 'Microprocessor and Computer Architecture Laboratory', folderId: '1v34CmWX7pDEk3LQh0WOYhwiDDtW0pPDd', teacherId: ['T023','T012'] ,videoId: [],ExtraId:[]},
-    { code: 'ICE3203', name: 'Microwave Engineering and Antenna', folderId: '11D-yHrl12cjHpkdHMInU71JzJipiRmNu', teacherId: ['T024'] ,videoId: ['V002','V003','V004','V005','V006','V007','V008','V009','V010','V011'],ExtraId:[]},
+    { code: 'ICE3203', name: 'Microwave Engineering and Antenna', folderId: '11D-yHrl12cjHpkdHMInU71JzJipiRmNu', teacherId: ['T024'] ,videoId: ['V008','V009','V010','V011'],ExtraId:[]},
     { code: 'ICE3204', name: 'Microwave Engineering and Antenna Laboratory', folderId: '1-BZk0KnigqSEzPWMSQQPSq0CRM4nATzV', teacherId: ['T024','T012'] ,videoId: [],ExtraId:[]},
-    { code: 'ICE3205', name: 'Web Technologies', folderId: '1ET3OJmws9qysRqvLPHe3jto1rQ6opAmB', teacherId: ['T031'] ,videoId: ['V012','V013'],ExtraId:[]},
+    { code: 'ICE3205', name: 'Web Technologies', folderId: '1ET3OJmws9qysRqvLPHe3jto1rQ6opAmB', teacherId: ['T031'] ,videoId: ['V013'],ExtraId:[]},
     { code: 'ICE3206', name: 'Web Technologies Laboratory', folderId: '1HsVkeEiNAcdfiJkydVGZOWUoGL8jRp1O', teacherId: ['T031','T032'] ,videoId: [],ExtraId:[]},
-    { code: 'ICE3207', name: 'Software and Requirement Engineering', folderId: '1-IFftarGERog2xNjTSblDGnVRg1kkz4U', teacherId: ['T016'] ,videoId: ['V014','V015'],ExtraId:[]},
+    { code: 'ICE3207', name: 'Software and Requirement Engineering', folderId: '1-IFftarGERog2xNjTSblDGnVRg1kkz4U', teacherId: ['T016'] ,videoId: ['V015'],ExtraId:[]},
     { code: 'ICE3208', name: 'Software and Requirement Engineering Laboratory', folderId: '1To1uTE_rNNcTwuWLkzDI1OswHwHiBzeA', teacherId: ['T016','T032'] ,videoId: [],ExtraId:[]},
-    { code: 'ICE3209', name: 'Statistics and Research Methodology', folderId: '12CKCFecCBGpFA_iWQqvGzDOcW3IiDb7W', teacherId: ['T010'],videoId: ['V016','V017','V018','V019','V020','V021','V022'],ExtraId:[]
+    { code: 'ICE3209', name: 'Statistics and Research Methodology', folderId: '12CKCFecCBGpFA_iWQqvGzDOcW3IiDb7W', teacherId: ['T010'],videoId: ['V018','V022'],ExtraId:[]
     },
   ],
   semester7: [
-    { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: null, teacherId: ['T007'] },
-    { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: null, teacherId: ['T007'] }
+    { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: "1DhG_7dKtoiNxgcIMQiTuloFOs8QnuUUl", teacherId: ['T007'] },
+    { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: "1s8fL1stqm86MaIOwbLK_j7xaIQtLnvAW", teacherId: ['T007'] },
+    { code: 'ICE4103', name: 'Infomation Network and Software Security', folderId: "1LfOGKsEisKC9dVvUQ2TMiYp8vetQRZIw", teacherId: [] },
+    { code: 'ICE4104', name: 'Optical Communication', folderId: "1qWW8sJ7yK_ySUNm3pDhTshNGh84keAAt", teacherId: ['T014'] },
+    { code: 'ICE4105', name: 'Optical Communication Laboratory', folderId: "1teebNjM3cSz6zbEGIqCgSuQucmvV_21G", teacherId: ['T014'] },
+    { code: 'ICE4106', name: 'Artificial Intelligence', folderId: "1lODJmXQvnkhO1Kds-lPja1Ts4BjSraxY", teacherId: ['T016'] },
+    { code: 'ICE4107', name: 'Artificial Intelligence Laboratory', folderId: "1Vd8hMo80-pT4T1niJY1N4G6OpHgAEJu7", teacherId: ['T016'] }
+
   ]
 };
 

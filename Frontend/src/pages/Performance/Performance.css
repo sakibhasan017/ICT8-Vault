@@ -71,7 +71,6 @@
 
 .per123-performance-container input,
 .pre123-slt {
-  flex: 1;
   padding: 0.6rem;
   border: none;
   border-radius: 0.5rem;
@@ -146,13 +145,29 @@
   .per123-card h2 {
     font-size: 1.4rem;
   }
+  
 
   .per123-input-row,
   .per123-course-row,
   .per123-sem-row {
     flex-direction: column;
     gap: 0.8rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
   }
+
+  .per123-course-row, .per123-sem-row{
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .per123-course-row select,input{
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+    
 
   .input-group {
     min-width: 100%;
@@ -162,4 +177,6 @@
     width: 100%;
     margin-right: 0;
   }
+
+  
 }

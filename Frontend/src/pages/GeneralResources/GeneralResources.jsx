@@ -8,6 +8,8 @@ import BusIcon from '../../assets/bus-icon.png';
 import AssignmentIcon from '../../assets/assignment-icon.png';
 import GroupIcon from '../../assets/group-icon.png';
 import ReportIcon from '../../assets/report-icon.png';
+import ImprovementIcon from '../../assets/improve_icon.png';
+import StipendIcon from '../../assets/stipend_icon.png';
 
 const resources = [
   {
@@ -39,6 +41,16 @@ const resources = [
     title: "Cover Page for EEE Report",
     url: "https://drive.google.com/file/d/1ov2G5U1RTLYUIO6styfT2a54hKWcajHy/view",
     icon: ReportIcon,
+  },
+  {
+    title: "Retake/Improvement Form",
+    url: "https://docs.google.com/document/d/1h5xGwpRQQA6mCV1sY7u27cMJCV-RjN_Q/edit?usp=sharing&ouid=110645007617669572413&rtpof=true&sd=true",
+    icon: ImprovementIcon,
+  },
+  {
+    title: "Stipend Form",
+    url: "https://docs.google.com/document/d/1pVAjHRckv35z34gmBBmHpid8had2oDPS/edit?usp=sharing&ouid=110645007617669572413&rtpof=true&sd=true",
+    icon: StipendIcon,
   },
 ];
 

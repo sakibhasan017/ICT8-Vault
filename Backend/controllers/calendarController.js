@@ -30,4 +30,24 @@ const fetchCalendar = async (req,res)=>{
   }
 }
 
-export {addCalendar,fetchCalendar};
+const updateCalendar = async (req,res)=>{
+  try{
+      await calendarModel.findByIdAndUpdate(req.params.id, req.body);
+      res.json({success:true,message:"Calendar Updated"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+const deleteCalendar = async (req,res)=>{
+  try{
+      await calendarModel.findByIdAndDelete(req.params.id);
+      res.json({success:true,message:"Calendar Deleted"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+export {addCalendar,fetchCalendar,updateCalendar,deleteCalendar};

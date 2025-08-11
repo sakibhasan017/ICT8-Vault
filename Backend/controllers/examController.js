@@ -34,4 +34,25 @@ const fetchExam = async (req,res)=>{
   }
 }
 
-export {addExam,fetchExam};
+const updateExam = async (req,res)=>{
+  try{
+      await examModel.findByIdAndUpdate(req.params.id, req.body);
+      res.json({success:true,message:"Exam Updated"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+const deleteExam = async (req,res)=>{
+  try{
+      await examModel.findByIdAndDelete(req.params.id);
+      res.json({success:true,message:"Exam Deleted"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+export {addExam,fetchExam,updateExam,deleteExam};
+

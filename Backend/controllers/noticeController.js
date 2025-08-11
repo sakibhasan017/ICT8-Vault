@@ -32,4 +32,24 @@ const fetchNotice = async (req,res)=>{
   }
 }
 
-export {addNotice,fetchNotice};
+const updateNotice = async (req,res)=>{
+  try{
+      await noticeModel.findByIdAndUpdate(req.params.id, req.body);
+      res.json({success:true,message:"Notice Updated"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+const deleteNotice = async (req,res)=>{
+  try{
+      await noticeModel.findByIdAndDelete(req.params.id);
+      res.json({success:true,message:"Notice Deleted"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+export {addNotice,fetchNotice,updateNotice,deleteNotice};

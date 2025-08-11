@@ -32,4 +32,25 @@ const fetchAssignment = async (req,res)=>{
   }
 }
 
-export {addAssignment,fetchAssignment};
+const updateAssignment = async (req,res)=>{
+  try{
+      await assignmentModel.findByIdAndUpdate(req.params.id, req.body);
+      res.json({success:true,message:"Assignment Updated"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+const deleteAssignment = async (req,res)=>{
+  try{
+      await assignmentModel.findByIdAndDelete(req.params.id);
+      res.json({success:true,message:"Assignment Deleted"});
+  }catch(error){
+    console.log(error);
+    res.json({success:false,message:"Error"});
+  }
+}
+
+
+export {addAssignment,fetchAssignment,updateAssignment,deleteAssignment};
