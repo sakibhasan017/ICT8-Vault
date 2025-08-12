@@ -11,6 +11,8 @@ import cron from 'node-cron';
 import sendScheduledNotifications from './notifyScheduler.js';
 import testRoute from './routes/testRoute.js';
 import feedbackRouter from './routes/feedbackRoute.js';
+import weeklyRouter from './routes/weeklyRoute.js';
+import imageRouter from './routes/imageRoute.js';
 
 dotenv.config();
 connectDB();
@@ -27,6 +29,8 @@ app.use("/api/calendar",calendarRouter);
 app.use("/api/notify",notifyRouter);
 app.use("/api/test",testRoute);
 app.use("/api/feedback",feedbackRouter);
+app.use("/api/weekly",weeklyRouter);
+app.use("/api/image",imageRouter);
 
 
 cron.schedule('0 15 * * *', () => {

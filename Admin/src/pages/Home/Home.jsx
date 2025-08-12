@@ -30,6 +30,11 @@ export default function Home() {
           <div className="option-icon">🔔</div>
           <div className="option-title">Notify</div>
         </Link>
+        <Link to="/weekly" className="option-card">
+  <div className="option-icon">📆</div>
+  <div className="option-title">Weekly Updates</div>
+</Link>
+
       </div>
     </div>
   );

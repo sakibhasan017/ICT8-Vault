@@ -7,6 +7,7 @@ import Calendar from "./pages/Calendar/Calendar";
 import Assignment from "./pages/Assignment/Assignment";
 import Feedback from "./pages/Feedback/Feedback";
 import Notify from "./pages/Notify/Notify";
+import WeeklyUpdates from "./pages/Weekly/Weekly";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/assignment" element={<Assignment/>}/>
         <Route path="/feedback" element={<Feedback/>}/>
         <Route path="/notify" element={<Notify/>}/>
+        <Route path="/weekly" element={<WeeklyUpdates/>}/>
       </Routes>
     </Router>
   );

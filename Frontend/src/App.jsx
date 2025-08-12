@@ -11,6 +11,8 @@ import Performance from "./pages/Performance/Performance.jsx";
 import Memories from "./pages/Memories/Memories.jsx";
 import Achievements from "./pages/Achievements/Achievements.jsx";
 import Feedback from "./pages/Feedback/Feedback.jsx";
+import WeeklyView from "./pages/WeeklyUpdates/WeeklyUpdate.jsx";
+
 
 const App = () => {
   return (
@@ -26,6 +28,7 @@ const App = () => {
         <Route path="/memories" element={<Memories/>}/>
         <Route path="/achievements" element={<Achievements/>}/>
         <Route path="/feedback" element={<Feedback/>}/>
+        <Route path="/week-updates" element={<WeeklyView/>}/>
       </Routes>
       <Footer/>
     </Router>

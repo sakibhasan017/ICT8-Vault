@@ -14,6 +14,11 @@ const More = () => {
       <h1 className="more-title">Explore More</h1>
       <div className="more-grid">
 
+        <div className="more-card" onClick={() => navigate("/week-updates")}>
+          <h2>🗞️ Weekly Updates</h2>
+          <p>Stay updated with the latest news about semester.</p>
+        </div>
+
         <div className="more-card" onClick={() => navigate("/performance-tracker")}>
           <h2>📊 Performance Tracker</h2>
           <p>Track your marks, attendance, and progress in style.</p>
@@ -35,7 +40,7 @@ const More = () => {
         </div>
 
         <div className="more-card" onClick={() => navigate("/feedback")}>
-          <h2>🏆 Share Your Thoughts</h2>
+          <h2>💬 Share Your Thoughts</h2>
           <p>Share your ideas, suggestions, or concerns to help us improve.</p>
         </div>
 
