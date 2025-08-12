@@ -35,15 +35,7 @@ const Memories = () => {
     return url;
   };
 
-  document.addEventListener('click', function(e) {
-  const heart = document.createElement('div');
-  heart.className = 'heart-float';
-  heart.innerHTML = '❤️';
-  heart.style.left = e.pageX + 'px';
-  heart.style.top = e.pageY + 'px';
-  document.body.appendChild(heart);
-  setTimeout(() => heart.remove(), 3000);
-});
+
 
   useEffect(() => {
     const fetchMemories = async () => {
@@ -69,7 +61,6 @@ const Memories = () => {
     fetchMemories();
   }, []);
 
-  // Auto-rotation effect
   useEffect(() => {
     const interval = isAutoPlaying && memories.length > 0
       ? setInterval(() => {
