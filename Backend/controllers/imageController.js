@@ -1,51 +1,39 @@
-
 import imageModel from "../models/imageModel.js";
-import fs from 'fs'
+import cloudinary from "../config/cloudinary.js";
+import fs from "fs";
 
+const addImage = async (req, res) => {
+  try {
+    // Upload image to Cloudinary
+    const result = await cloudinary.uploader.upload(req.file.path, {
+      folder: "my_uploads"
+    });
 
-const addImage = async(req,res)=>{
-  const image = new imageModel({
-    img:req.body.img,
-    title: req.body.title
-  })
+    // Create DB record
+    const image = new imageModel({
+      img: result.secure_url,
+      title: req.body.title
+    });
 
-  try{
-      await image.save();
-      res.json({success:true,message:"Image Added"});
-  }catch(error){
-    console.log(error);
-    res.json({success:false,message:"Error"});
+    await image.save();
+
+    // Remove file from local uploads folder
+    fs.unlinkSync(req.file.path);
+
+    res.json({ success: true, message: "Image Added", data: image });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ success: false, message: "Error uploading image" });
   }
-}
+};
 
-const fetchImage = async (req,res)=>{
-  try{
-      const image =await imageModel.find(); 
-      res.json({success:true,message:image});
-  }catch(error){
-    console.log(error);
-    res.json({success:false,message:"Error"});
+const fetchImage = async (req, res) => {
+  try {
+    const images = await imageModel.find();
+    res.json({ success: true, message: images });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "Error fetching images" });
   }
-}
+};
 
-const updateImage = async (req,res)=>{
-  try{
-      await imageModel.findByIdAndUpdate(req.params.id, req.body);
-      res.json({success:true,message:"Image Updated"});
-  }catch(error){
-    console.log(error);
-    res.json({success:false,message:"Error"});
-  }
-}
-
-const deleteImage = async (req,res)=>{
-  try{
-      await imageModel.findByIdAndDelete(req.params.id);
-      res.json({success:true,message:"Image Deleted"});
-  }catch(error){
-    console.log(error);
-    res.json({success:false,message:"Error"});
-  }
-}
-
-export {addImage ,fetchImage ,updateImage ,deleteImage };
+export { addImage, fetchImage };

@@ -10,32 +10,20 @@ const Memories = () => {
   const [error, setError] = useState(null);
 
   
-  const optimizeImageUrl = (url) => {
+  const optimizeImageUrl = (url, isThumbnail = false) => {
     if (!url) return '';
-
-    
+  
     if (url.includes('res.cloudinary.com')) {
-      return url.replace('/upload/', '/upload/q_auto,f_auto,w_800/');
-    }
+
+      if (!isThumbnail) {
+        return url.replace('/upload/', '/upload/q_auto:best,f_auto,w_1200/');
+      }
     
-  
-    if (url.includes('drive.google.com')) {
-      const fileId = url.match(/\/file\/d\/([^/]+)/)?.[1] || 
-                    url.match(/id=([^&]+)/)?.[1];
-      return fileId 
-        ? `https://lh3.googleusercontent.com/d/${fileId}=w800-h600` 
-        : url;
-    }
-    
-  
-    if (url.includes('imgbb.com')) {
-      return url.replace('.com/', '.com/resize/800x600/');
+      return url.replace('/upload/', '/upload/q_auto:good,f_auto,w_300,c_scale/');
     }
     
     return url;
   };
-
-
 
   useEffect(() => {
     const fetchMemories = async () => {
@@ -46,7 +34,7 @@ const Memories = () => {
         const processedMemories = response.data.message.map(item => ({
           ...item,
           img: optimizeImageUrl(item.img),
-          thumbnail: optimizeImageUrl(item.img).replace('w_800', 'w_200') // Smaller for thumbnails
+          thumbnail: optimizeImageUrl(item.img, true)
         }));
 
         setMemories(processedMemories);
@@ -61,11 +49,12 @@ const Memories = () => {
     fetchMemories();
   }, []);
 
+  // Auto-rotation effect
   useEffect(() => {
     const interval = isAutoPlaying && memories.length > 0
       ? setInterval(() => {
           setCurrentIndex(prev => (prev + 1) % memories.length);
-        }, 3000)
+        }, 4000) // Slightly slower rotation for better viewing
       : null;
     
     return () => clearInterval(interval);
@@ -85,7 +74,7 @@ const Memories = () => {
     return (
       <div className="loading-state">
         <div className="spinner"></div>
-        <p>Loading your memories...</p>
+        <p>Loading your HD memories...</p>
       </div>
     );
   }
@@ -139,7 +128,7 @@ const Memories = () => {
             alt={memories[currentIndex].title}
             className="main-image"
             loading="eager"
-            decoding="sync"
+            decoding="async"
             onError={(e) => {
               e.target.src = `https://placehold.co/800x500?text=${encodeURIComponent(memories[currentIndex]?.title || 'Memory')}`;
               e.target.className += ' fallback-image';
