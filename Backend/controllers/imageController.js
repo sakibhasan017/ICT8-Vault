@@ -4,12 +4,11 @@ import fs from "fs";
 
 const addImage = async (req, res) => {
   try {
-    // Upload image to Cloudinary
+    
     const result = await cloudinary.uploader.upload(req.file.path, {
       folder: "my_uploads"
     });
 
-    // Create DB record
     const image = new imageModel({
       img: result.secure_url,
       title: req.body.title
@@ -17,7 +16,7 @@ const addImage = async (req, res) => {
 
     await image.save();
 
-    // Remove file from local uploads folder
+  
     fs.unlinkSync(req.file.path);
 
     res.json({ success: true, message: "Image Added", data: image });
