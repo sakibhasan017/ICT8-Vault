@@ -164,6 +164,56 @@
   border-left: 3px solid #da1c52;
 }
 
+/* Event Popup */
+.event-popup {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  width: 300px;
+  max-width: 90%;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.event-popup h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.event-popup p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #34495e;
+}
+
+.event-popup button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.event-popup button:hover {
+  background-color: #2980b9;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 
 @media (max-width: 600px) {
   .calendar-section {

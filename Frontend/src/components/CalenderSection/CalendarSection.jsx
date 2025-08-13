@@ -6,6 +6,7 @@ import './CalendarSection.css';
 const CalendarSection = () => {
   const [events, setEvents] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
+  const [popupEvent, setPopupEvent] = useState(null); // <-- For event popup
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [section, setSection] = useState('');
@@ -38,6 +39,18 @@ const CalendarSection = () => {
 
     fetchCalendarData();
   }, []);
+
+  // Event click handler
+  const handleEventClick = (clickInfo) => {
+    setPopupEvent({
+      title: clickInfo.event.title,
+      date: clickInfo.event.start
+    });
+  };
+
+  const closeEventPopup = () => {
+    setPopupEvent(null);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -85,57 +98,63 @@ const CalendarSection = () => {
         </div>
       </div>
 
+      {/* Notification popup */}
       {showPopup && (
-  <div className="popup-overlay">
-    <div className="popup-form">
-      <h3>Get Notified by Email</h3>
+        <div className="popup-overlay">
+          <div className="popup-form">
+            <h3>Get Notified by Email</h3>
+            <p className="notify-disclaimer">
+              ⚠️ Disclaimer: This notification service uses multiple servers.  
+              If a server is down, notifications may not be delivered.  
+              Please do not rely 100% on this feature.
+            </p>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="Your Name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+              <select
+                value={section}
+                onChange={(e) => setSection(e.target.value)}
+                required
+              >
+                <option value="">Select Section</option>
+                <option value="A">Section A</option>
+                <option value="B">Section B</option>
+              </select>
+              <button type="submit">Submit</button>
+              {message && (
+                <p className={isSuccess ? 'message success' : 'message error'}>
+                  {message}
+                </p>
+              )}
+              <button type="button" onClick={closePopup}>Close</button>
+            </form>
+          </div>
+        </div>
+      )}
 
-      <p className="notify-disclaimer">
-        ⚠️ Disclaimer: This notification service uses multiple servers.  
-        If a server is down, notifications may not be delivered.  
-        Please do not rely 100% on this feature.
-      </p>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Your Name"
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-          required
-        />
-        <input
-          type="email"
-          placeholder="Your Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-
-        <select
-          value={section}
-          onChange={(e) => setSection(e.target.value)}
-          required
-        >
-          <option value="">Select Section</option>
-          <option value="A">Section A</option>
-          <option value="B">Section B</option>
-        </select>
-
-        <button type="submit">Submit</button>
-
-        {message && (
-          <p className={isSuccess ? 'message success' : 'message error'}>
-            {message}
-          </p>
-        )}
-
-        <button type="button" onClick={closePopup}>Close</button>
-      </form>
-    </div>
-  </div>
-)}
-
+      {/* Event detail popup */}
+      {popupEvent && (
+        <div className="popup-overlay" onClick={closeEventPopup}>
+          <div className="event-popup" onClick={(e) => e.stopPropagation()}>
+            <h3>Event Details</h3>
+            <p><strong>Title:</strong> {popupEvent.title}</p>
+            <p><strong>Date:</strong> {popupEvent.date.toDateString()}</p>
+            <button onClick={closeEventPopup}>Close</button>
+          </div>
+        </div>
+      )}
 
       <div className="legend">
         <span className="legend-item section-a">Section A</span>
@@ -149,6 +168,7 @@ const CalendarSection = () => {
           initialView="dayGridMonth"
           events={events}
           height="auto"
+          eventClick={handleEventClick} // <-- Add event click handler
         />
       </div>
     </section>
