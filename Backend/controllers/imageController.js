@@ -11,7 +11,8 @@ const addImage = async (req, res) => {
 
     const image = new imageModel({
       img: result.secure_url,
-      title: req.body.title
+      title: req.body.title,
+      serial:req.body.serial
     });
 
     await image.save();

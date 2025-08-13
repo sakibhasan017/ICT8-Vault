@@ -6,12 +6,30 @@ import './CalendarSection.css';
 const CalendarSection = () => {
   const [events, setEvents] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
-  const [popupEvent, setPopupEvent] = useState(null); // <-- For event popup
+  const [popupEvent, setPopupEvent] = useState(null);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [section, setSection] = useState('');
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(null);
+
+  const [sectionPopupEvents, setSectionPopupEvents] = useState(null); 
+
+const handleSectionClick = (section) => {
+  const filteredEvents = section === 'All'
+    ? events
+    : events.filter(ev => 
+        (section === 'A' && ev.color === '#3498db') ||
+        (section === 'B' && ev.color === '#2ecc71')
+      );
+  
+  setSectionPopupEvents({ section, events: filteredEvents });
+};
+
+const closeSectionPopup = () => {
+  setSectionPopupEvents(null);
+};
+
 
   useEffect(() => {
     const fetchCalendarData = async () => {
@@ -23,6 +41,7 @@ const CalendarSection = () => {
           const formatted = data.message.map(item => ({
             title: item.title,
             date: item.date,
+            section:item.section,
             color:
               item.section === 'A' ? '#3498db' :
               item.section === 'B' ? '#2ecc71' :
@@ -40,11 +59,12 @@ const CalendarSection = () => {
     fetchCalendarData();
   }, []);
 
-  // Event click handler
+  
   const handleEventClick = (clickInfo) => {
     setPopupEvent({
       title: clickInfo.event.title,
-      date: clickInfo.event.start
+      date: clickInfo.event.start,
+      section: clickInfo.event.extendedProps.section || 'N/A'
     });
   };
 
@@ -98,7 +118,7 @@ const CalendarSection = () => {
         </div>
       </div>
 
-      {/* Notification popup */}
+      
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-form">
@@ -144,22 +164,44 @@ const CalendarSection = () => {
         </div>
       )}
 
-      {/* Event detail popup */}
+  
       {popupEvent && (
         <div className="popup-overlay" onClick={closeEventPopup}>
           <div className="event-popup" onClick={(e) => e.stopPropagation()}>
             <h3>Event Details</h3>
             <p><strong>Title:</strong> {popupEvent.title}</p>
+            <p><strong>Section:</strong> {popupEvent.section}</p>
             <p><strong>Date:</strong> {popupEvent.date.toDateString()}</p>
             <button onClick={closeEventPopup}>Close</button>
           </div>
         </div>
       )}
 
+      {sectionPopupEvents && (
+  <div className="popup-overlay" onClick={closeSectionPopup}>
+    <div className="event-popup" onClick={(e) => e.stopPropagation()}>
+      <h3>Events for {sectionPopupEvents.section}</h3>
+      {sectionPopupEvents.events.length > 0 ? (
+        <ul>
+          {sectionPopupEvents.events.map((ev, index) => (
+            <li key={index}>
+              <strong>{ev.title}</strong> — {new Date(ev.date).toDateString()}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No events for this section.</p>
+      )}
+      <button onClick={closeSectionPopup}>Close</button>
+    </div>
+  </div>
+)}
+
+
       <div className="legend">
-        <span className="legend-item section-a">Section A</span>
-        <span className="legend-item section-b">Section B</span>
-        <span className="legend-item section-all">All Sections</span>
+  <button className="legend-item section-a" onClick={() => handleSectionClick('A')}>Section A</button>
+  <button className="legend-item section-b" onClick={() => handleSectionClick('B')}>Section B</button>
+  <button className="legend-item section-all" onClick={() => handleSectionClick('All')}>All Sections</button>
       </div>
 
       <div className="calendar-container">
@@ -168,7 +210,7 @@ const CalendarSection = () => {
           initialView="dayGridMonth"
           events={events}
           height="auto"
-          eventClick={handleEventClick} // <-- Add event click handler
+          eventClick={handleEventClick} 
         />
       </div>
     </section>

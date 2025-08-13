@@ -27,24 +27,27 @@ const Memories = () => {
 
   useEffect(() => {
     const fetchMemories = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/image/list`);
-        
-        const processedMemories = response.data.message.map(item => ({
-          ...item,
-          img: optimizeImageUrl(item.img),
-          thumbnail: optimizeImageUrl(item.img, true)
-        }));
+  try {
+    setLoading(true);
+    const response = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/image/list`);
+    
+    const processedMemories = response.data.message.map(item => ({
+      ...item,
+      img: optimizeImageUrl(item.img),
+      thumbnail: optimizeImageUrl(item.img, true)
+    }))
+    
+    .sort((a, b) => a.serial - b.serial);
 
-        setMemories(processedMemories);
-      } catch (err) {
-        setError('Failed to load memories. Please try again.');
-        console.error('Fetch error:', err);
-      } finally {
-        setLoading(false);
-      }
-    };
+    setMemories(processedMemories);
+  } catch (err) {
+    setError('Failed to load memories. Please try again.');
+    console.error('Fetch error:', err);
+  } finally {
+    setLoading(false);
+  }
+};
+
 
     fetchMemories();
   }, []);
