@@ -19,6 +19,11 @@ const More = () => {
           <p>Stay updated with the latest news about semester.</p>
         </div>
 
+        <div className="more-card" onClick={() => navigate("/profile-card")}>
+          <h2>🆔 Build Your Identity</h2>
+          <p>Showcase your details so others can connect with you easily.</p>
+        </div>
+
         <div className="more-card" onClick={() => navigate("/performance-tracker")}>
           <h2>📊 Performance Tracker</h2>
           <p>Track your marks, attendance, and progress in style.</p>

@@ -12,6 +12,8 @@ import Memories from "./pages/Memories/Memories.jsx";
 import Achievements from "./pages/Achievements/Achievements.jsx";
 import Feedback from "./pages/Feedback/Feedback.jsx";
 import WeeklyView from "./pages/WeeklyUpdates/WeeklyUpdate.jsx";
+import ProfileCard from "./pages/ProfileCard/ProfileCard.jsx";
+import UserInfoFromCard from "./pages/UserInfoFromCard/UserInfoFromCard.jsx";
 
 
 const App = () => {
@@ -29,6 +31,8 @@ const App = () => {
         <Route path="/achievements" element={<Achievements/>}/>
         <Route path="/feedback" element={<Feedback/>}/>
         <Route path="/week-updates" element={<WeeklyView/>}/>
+        <Route path="/profile-card" element={<ProfileCard/>}/>
+        <Route path="/user/:id" element={<UserInfoFromCard/>}/>
       </Routes>
       <Footer/>
     </Router>

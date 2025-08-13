@@ -49,12 +49,12 @@ const Memories = () => {
     fetchMemories();
   }, []);
 
-  // Auto-rotation effect
+
   useEffect(() => {
     const interval = isAutoPlaying && memories.length > 0
       ? setInterval(() => {
           setCurrentIndex(prev => (prev + 1) % memories.length);
-        }, 4000) // Slightly slower rotation for better viewing
+        }, 4000) 
       : null;
     
     return () => clearInterval(interval);
@@ -74,7 +74,7 @@ const Memories = () => {
     return (
       <div className="loading-state">
         <div className="spinner"></div>
-        <p>Loading your HD memories...</p>
+        <p>Loading memories...</p>
       </div>
     );
   }
@@ -93,7 +93,7 @@ const Memories = () => {
     return (
       <div className="empty-state">
         <h3>No Memories Found</h3>
-        <p>Add some memories to get started!</p>
+        
       </div>
     );
   }

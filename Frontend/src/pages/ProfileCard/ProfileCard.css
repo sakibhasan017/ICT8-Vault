@@ -1,0 +1,356 @@
+.prfcd-container {
+  padding: 30px;
+  max-width: 1400px;
+  margin: auto;
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);
+}
+
+.prfcd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.prfcd-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+  color: #2c7be5;
+  font-weight: 700;
+  position: relative;
+}
+
+.prfcd-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2c7be5 0%, #66a3ff 100%);
+  border-radius: 2px;
+}
+
+.prfcd-add-button {
+  background: linear-gradient(135deg, #2c7be5 0%, #66a3ff 100%);
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(44, 123, 229, 0.3);
+  transition: all 0.3s ease;
+}
+
+.prfcd-add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 123, 229, 0.4);
+}
+
+.prfcd-filters {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.prfcd-input, .prfcd-select {
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #e6f0ff;
+  border-radius: 30px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.prfcd-input:focus, .prfcd-select:focus {
+  outline: none;
+  border-color: #2c7be5;
+  box-shadow: 0 4px 20px rgba(44, 123, 229, 0.2);
+}
+
+.prfcd-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.prfcd-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(44, 123, 229, 0.1);
+  position: relative;
+  border: 1px solid #e6f0ff;
+}
+
+.prfcd-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: linear-gradient(90deg, #2c7be5 0%, #66a3ff 100%);
+}
+
+.prfcd-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(44, 123, 229, 0.2);
+}
+
+.prfcd-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.prfcd-card:hover .prfcd-image {
+  transform: scale(1.03);
+}
+
+.prfcd-name {
+  font-size: 1.3rem;
+  margin: 15px 0 5px;
+  color: #2d3748;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.prfcd-card:hover .prfcd-name {
+  color: #2c7be5;
+}
+
+.prfcd-id, .prfcd-blood {
+  font-size: 14px;
+  color: #718096;
+  margin-bottom: 8px;
+}
+
+.prfcd-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.prfcd-modal-content {
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.prfcd-modal-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #4a5568;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2c7be5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(44, 123, 229, 0.1);
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.social-link-group {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.social-link-group input {
+  flex: 1;
+  padding: 10px;
+}
+
+.remove-link {
+  background-color: #fed7d7;
+  color: #e53e3e;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.remove-link:hover {
+  background-color: #feb2b2;
+}
+
+.add-link {
+  background-color: #ebf8ff;
+  color: #3182ce;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin-top: 5px;
+}
+
+.add-link:hover {
+  background-color: #bee3f8;
+}
+
+.prfcd-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.prfcd-modal-actions button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.prfcd-modal-actions button:first-child {
+  background: linear-gradient(135deg, #2c7be5 0%, #66a3ff 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(44, 123, 229, 0.3);
+}
+
+.prfcd-modal-actions button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 123, 229, 0.4);
+}
+
+.prfcd-modal-actions button:last-child {
+  background-color: #fff;
+  color: #4a5568;
+  border: 2px solid #e2e8f0;
+}
+
+.prfcd-modal-actions button:last-child:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.prfcd-info {
+  background-color: #eaf4ff;
+  color: #004085;
+  padding: 10px 15px;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.8rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #555;
+  transition: color 0.2s ease;
+}
+
+.password-toggle:hover {
+  color: #2c7be5;
+}
+
+
+
+@media (max-width: 768px) {
+  .prfcd-container {
+    padding: 20px;
+  }
+  
+  .prfcd-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .prfcd-title {
+    font-size: 2rem;
+  }
+  
+  .prfcd-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .prfcd-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .prfcd-modal-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .prfcd-modal-actions {
+    justify-content: center;
+  }
+}
+
+@media (min-width: 769px) {
+  .prfcd-modal-form {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .form-group:last-child,
+  .form-group:nth-last-child(2) {
+    grid-column: span 2;
+  }
+}

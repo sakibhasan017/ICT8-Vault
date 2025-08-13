@@ -13,6 +13,7 @@ import testRoute from './routes/testRoute.js';
 import feedbackRouter from './routes/feedbackRoute.js';
 import weeklyRouter from './routes/weeklyRoute.js';
 import imageRouter from './routes/imageRoute.js';
+import profileRouter from './routes/profileRoute.js';
 
 dotenv.config();
 connectDB();
@@ -31,6 +32,7 @@ app.use("/api/test",testRoute);
 app.use("/api/feedback",feedbackRouter);
 app.use("/api/weekly",weeklyRouter);
 app.use("/api/image",imageRouter);
+app.use("/api/profile",profileRouter);
 
 
 cron.schedule('0 15 * * *', () => {
