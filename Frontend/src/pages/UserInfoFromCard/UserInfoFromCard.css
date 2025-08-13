@@ -377,3 +377,62 @@
 .cancel-button:hover {
   background-color: #bdc3c7;
 }
+
+@media (max-width: 992px) {
+  .profile-content {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .profile-left {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .profile-right {
+    flex: 1 1 100%;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .profile-container {
+    padding: 15px;
+  }
+
+  .profile-image {
+    max-width: 100%;
+  }
+
+  .popup-content {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .profile-edit-button {
+    text-align: center;
+  }
+
+  .popup-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .edit-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
