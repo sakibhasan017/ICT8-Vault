@@ -323,7 +323,7 @@ export default function UserInfoFromCard() {
           <>
             {profile.bio && (
               <div className="profile-bio">
-                <h3>About</h3>
+                <h3>Bio</h3>
                 <p>{profile.bio}</p>
               </div>
             )}

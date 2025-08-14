@@ -16,15 +16,27 @@ const CalendarSection = () => {
   const [sectionPopupEvents, setSectionPopupEvents] = useState(null); 
 
 const handleSectionClick = (section) => {
-  const filteredEvents = section === 'All'
-    ? events
-    : events.filter(ev => 
-        (section === 'A' && ev.color === '#3498db') ||
-        (section === 'B' && ev.color === '#2ecc71')
-      );
-  
-  setSectionPopupEvents({ section, events: filteredEvents });
+  if (section === "A") {
+    setSectionPopupEvents({
+      section,
+      events: events.filter(ev => ev.section === "A" || ev.section === "All")
+    });
+  } 
+  else if (section === "B") {
+    setSectionPopupEvents({
+      section,
+      events: events.filter(ev => ev.section === "B" || ev.section === "All")
+    });
+  } 
+  else if (section === "All") {
+  setSectionPopupEvents({
+    section,
+    events: events.filter(ev => ev.section === "All")
+  });
+}
+
 };
+
 
 const closeSectionPopup = () => {
   setSectionPopupEvents(null);
@@ -180,7 +192,10 @@ const closeSectionPopup = () => {
       {sectionPopupEvents && (
   <div className="popup-overlay" onClick={closeSectionPopup}>
     <div className="event-popup" onClick={(e) => e.stopPropagation()}>
-      <h3>Events for {sectionPopupEvents.section}</h3>
+      {sectionPopupEvents && (
+  <div className="popup-overlay" onClick={closeSectionPopup}>
+    <div className="event-popup" onClick={(e) => e.stopPropagation()}>
+      <h3>Events for Section {sectionPopupEvents.section}</h3>
       {sectionPopupEvents.events.length > 0 ? (
         <ul>
           {sectionPopupEvents.events.map((ev, index) => (
@@ -196,6 +211,12 @@ const closeSectionPopup = () => {
     </div>
   </div>
 )}
+
+      <button onClick={closeSectionPopup}>Close</button>
+    </div>
+  </div>
+)}
+
 
 
       <div className="legend">
