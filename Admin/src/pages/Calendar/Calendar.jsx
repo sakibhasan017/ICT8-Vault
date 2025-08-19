@@ -19,14 +19,16 @@ export default function Calendar() {
   }, []);
 
   const fetchEvents = async () => {
-    try {
-      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/calendar/list`);
-      setEvents(res.data.message || []);
-    } catch (err) {
-      console.error("Error fetching calendar events:", err);
-      setEvents([]);
-    }
-  };
+  try {
+    const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/calendar/list`);
+    const data = res.data.message || [];
+    const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date)); 
+    setEvents(sorted);
+  } catch (err) {
+    console.error("Error fetching calendar events:", err);
+    setEvents([]);
+  }
+};
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
