@@ -1,17 +1,17 @@
 
 const teachers = [
   { id: 'T001', name: 'Dr. Rashed Mazumder', designation: 'Associate Professor', department: 'IIT', university: 'Jahangirnagar University', phone: '+8801738541513', email: 'rmiit@juniv.edu' },
-  { id: 'T002', name: 'Prof. Dr. M. Mahbubur Rahman', designation: 'Professor', department: 'Physics', university: 'Jahangirnagar University', phone: null, email: null },
-  { id: 'T003', name: 'Dr. M. Humayun Kabir', designation: 'Professor', department: 'CSE', university: 'Jahangirnagar University', phone: null, email: null },
+  { id: 'T002', name: 'Prof. Dr. M. Mahbubur Rahman', designation: 'Professor', department: 'Physics', university: 'Jahangirnagar University', phone: '01995942947', email: 'm.rahman@juniv.edu' },
+  { id: 'T003', name: 'Dr. M. Humayun Kabir', designation: 'Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '01726035620', email: 'hkabirju@juniv.edu' },
   { id: 'T004', name: 'Prof. Dr. Raihan M. Sharif', designation: 'Associate Professor', department: 'English', university: 'Jahangirnagar University', phone: '+8801732898721', email: 'raihans07@juniv.edu' },
-  { id: 'T005', name: 'Dr. Mohammed Golam Rabbani', designation: 'Professor', department: 'History', university: 'Jahangirnagar University', phone: null, email: 'rabbani@juniv.edu' },
+  { id: 'T005', name: 'Dr. Mohammed Golam Rabbani', designation: 'Professor', department: 'History', university: 'Jahangirnagar University', phone: '01712561330', email: 'rabbani@juniv.edu' },
   { id: 'T006', name: 'Dr. M. Shamim Kaiser', designation: 'Professor', department: 'IIT', university: 'Jahangirnagar University', phone: '+8801511000555', email: 'mskaiser@juniv.edu' },
-  { id: 'T007', name: 'Md Musfique Anwar', designation: 'Professor', department: 'CSE', university: 'Jahangirnagar University', phone: null, email: null },
+  { id: 'T007', name: 'Md Musfique Anwar', designation: 'Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '01752311590', email: 'manwar@juniv.edu' },
   { id: 'T008', name: 'Bulbul Ahammad', designation: 'Assistant Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '+8801791132305', email: 'bulbul@juniv.edu' },
   { id: 'T009', name: 'Dr. Sarnali Basak', designation: 'Associate Professor', department: 'CSE', university: 'Jahangirnagar University', phone: null, email: 'sarnali.cse@juniv.edu' },
   { id: 'T010', name: 'Dr. Farhadur Reza', designation: 'Associate Professor', department: 'URP', university: 'Jahangirnagar University', phone: '+8801812222511', email: 'farhadrezaurp@juniv.edu' },
   { id: 'T011', name: 'Afrina Khatun', designation: 'Assistant Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769021815', email: 'afrina.khatun@bup.edu.bd' },
-  { id: 'T012', name: 'Saiful Islam', designation: 'Assistant Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: null, email: 'saifulislam@bup.edu.bd' },
+  { id: 'T012', name: 'Saiful Islam', designation: 'Assistant Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '01769028705', email: 'saifulislam@bup.edu.bd' },
   { id: 'T013', name: 'Dr. Mohammed Nasir Uddin', designation: 'Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769028700', email: 'nasiruddin@bup.edu.bd' },
   { id: 'T014', name: 'Md. Maynul Islam', designation: 'Assistant Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769021819', email: 'maynul@bup.edu.bd' },
   { id: 'T015', name: 'Dr. S. M. Salim Reza', designation: 'Assistant Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769021808', email: 'salim.reza@bup.edu.bd' },
@@ -31,7 +31,9 @@ const teachers = [
   { id: "T029", name: "Dr. Mohammad Abu Misir", designation: "Professor", department: "Finance", university: "Jagannath University", phone: "01818999951", email: "mabumisir@gmail.com"},
   { id: "T030", name: "Dr. Mohammad Babul Hasan", designation: "Professor", department: "Mathematics", university: "Dhaka University", phone: "01720809792", email: "babulhasan.math@du.ac.bd"},
   { id: "T031", name: "Atika Akter", designation: "Lecturer", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021829", email: "atika.akter@bup.edu.bd"},
-  { id: "T032", name: "Nusrat Tasnim", designation: "Lecturer", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021828", email: "nusrat.tasnim@bup.edu.bd"}
+  { id: "T032", name: "Nusrat Tasnim", designation: "Lecturer", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021828", email: "nusrat.tasnim@bup.edu.bd"},
+  { id: "T033", name: "Dr. Saeed Mahmud Ullah", designation: "Professor", department: "EEE", university: "Dhaka University", phone: "01732310343", email: "ullahsm@du.ac.bd"},
+  { id: "T034", name: "Nazneen Akter", designation: "Assistant Professor", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021823", email: "nazneen.akhter@bup.edu.bd"},
 ];
 
 const videoData =[
@@ -134,12 +136,12 @@ const courseData = {
   ],
   semester7: [
     { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: "1DhG_7dKtoiNxgcIMQiTuloFOs8QnuUUl", teacherId: ['T007'] },
-    { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: "1s8fL1stqm86MaIOwbLK_j7xaIQtLnvAW", teacherId: ['T007'] },
-    { code: 'ICE4103', name: 'Infomation Network and Software Security', folderId: "1LfOGKsEisKC9dVvUQ2TMiYp8vetQRZIw", teacherId: [] },
-    { code: 'ICE4104', name: 'Optical Communication', folderId: "1qWW8sJ7yK_ySUNm3pDhTshNGh84keAAt", teacherId: ['T014'] },
-    { code: 'ICE4105', name: 'Optical Communication Laboratory', folderId: "1teebNjM3cSz6zbEGIqCgSuQucmvV_21G", teacherId: ['T014'] },
+    { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: "1s8fL1stqm86MaIOwbLK_j7xaIQtLnvAW", teacherId: ['T007','T016'] },
+    { code: 'ICE4103', name: 'Infomation Network and Software Security', folderId: "1LfOGKsEisKC9dVvUQ2TMiYp8vetQRZIw", teacherId: ['T023'] },
+    { code: 'ICE4104', name: 'Optical Communication', folderId: "1qWW8sJ7yK_ySUNm3pDhTshNGh84keAAt", teacherId: ['T033'] },
+    { code: 'ICE4105', name: 'Optical Communication Laboratory', folderId: "1teebNjM3cSz6zbEGIqCgSuQucmvV_21G", teacherId: ['T033','T014'] },
     { code: 'ICE4106', name: 'Artificial Intelligence', folderId: "1lODJmXQvnkhO1Kds-lPja1Ts4BjSraxY", teacherId: ['T016'] },
-    { code: 'ICE4107', name: 'Artificial Intelligence Laboratory', folderId: "1Vd8hMo80-pT4T1niJY1N4G6OpHgAEJu7", teacherId: ['T016'] }
+    { code: 'ICE4107', name: 'Artificial Intelligence Laboratory', folderId: "1Vd8hMo80-pT4T1niJY1N4G6OpHgAEJu7", teacherId: ['T016','T034'] }
 
   ]
 };

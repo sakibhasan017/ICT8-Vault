@@ -14,6 +14,7 @@ import Feedback from "./pages/Feedback/Feedback.jsx";
 import WeeklyView from "./pages/WeeklyUpdates/WeeklyUpdate.jsx";
 import ProfileCard from "./pages/ProfileCard/ProfileCard.jsx";
 import UserInfoFromCard from "./pages/UserInfoFromCard/UserInfoFromCard.jsx";
+import PersonnelInfo from "./pages/personnelInfo/personnelInfo.jsx";
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
         <Route path="/week-updates" element={<WeeklyView/>}/>
         <Route path="/profile-card" element={<ProfileCard/>}/>
         <Route path="/user/:id" element={<UserInfoFromCard/>}/>
+        <Route path="/personnel-info" element={<PersonnelInfo/>}/>
       </Routes>
       <Footer/>
     </Router>

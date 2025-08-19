@@ -10,6 +10,7 @@ import GroupIcon from '../../assets/group-icon.png';
 import ReportIcon from '../../assets/report-icon.png';
 import ImprovementIcon from '../../assets/improve_icon.png';
 import StipendIcon from '../../assets/stipend_icon.png';
+import GuideLineIcon from '../../assets/guidelineIcon.png';
 
 const resources = [
   {
@@ -21,6 +22,11 @@ const resources = [
     title: "Academic Calendar",
     url: "https://drive.google.com/file/d/1f2mMhx4Ko8nCLEKk9GyNVOOLaAqL5qs_/view",
     icon: CalendarIcon,
+  },
+    {
+    title: "Academic Guidelines",
+    url: "https://drive.google.com/file/d/1zid6CdGhZtoTO_cuFZUGygc3_nBFdfrB/view?usp=sharing",
+    icon: GuideLineIcon,
   },
   {
     title: "Bus Route for Student",
@@ -52,6 +58,7 @@ const resources = [
     url: "https://docs.google.com/document/d/1pVAjHRckv35z34gmBBmHpid8had2oDPS/edit?usp=sharing&ouid=110645007617669572413&rtpof=true&sd=true",
     icon: StipendIcon,
   },
+
 ];
 
 const GeneralResources = () => {

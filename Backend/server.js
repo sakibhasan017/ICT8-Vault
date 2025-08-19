@@ -14,6 +14,7 @@ import feedbackRouter from './routes/feedbackRoute.js';
 import weeklyRouter from './routes/weeklyRoute.js';
 import imageRouter from './routes/imageRoute.js';
 import profileRouter from './routes/profileRoute.js';
+import personnelRouter from './routes/personnelRoute.js';
 
 dotenv.config();
 connectDB();
@@ -33,6 +34,7 @@ app.use("/api/feedback",feedbackRouter);
 app.use("/api/weekly",weeklyRouter);
 app.use("/api/image",imageRouter);
 app.use("/api/profile",profileRouter);
+app.use("/api/personnel",personnelRouter);
 
 
 cron.schedule('0 15 * * *', () => {

@@ -73,7 +73,7 @@ const CoursePage = () => {
       ) : (
         <div className="drive-container">
           <iframe
-            src={`https://drive.google.com/embeddedfolderview?id=${course.folderId}#grid`}
+            src={`https://drive.google.com/embeddedfolderview?id=${course.folderId}#list`}
             className="drive-iframe"
             allowFullScreen
             title={course.name}

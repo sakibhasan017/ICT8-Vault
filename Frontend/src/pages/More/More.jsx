@@ -24,14 +24,15 @@ const More = () => {
           <p>Showcase your details so others can connect with you easily.</p>
         </div>
 
+        <div className="more-card" onClick={() => navigate("/personnel-info")}>
+          <h2>👨‍🏫 Personnel Information</h2>
+          <p>Meet our deans, chairmen, faculties, and staff members.</p>
+        </div>
+
+
         <div className="more-card" onClick={() => navigate("/performance-tracker")}>
           <h2>📊 Performance Tracker</h2>
           <p>Track your marks, attendance, and progress in style.</p>
-        </div>
-
-        <div className="more-card" onClick={() => window.open("https://drive.google.com/file/d/1zid6CdGhZtoTO_cuFZUGygc3_nBFdfrB/view?usp=sharing", "_blank")}>
-          <h2>📘 Academic Guidelines</h2>
-          <p>Access official guidelines and study resources.</p>
         </div>
 
         <div className="more-card" onClick={() => navigate("/memories")}>
