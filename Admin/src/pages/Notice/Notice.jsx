@@ -11,7 +11,8 @@ export default function Notice() {
     extraInfo: '',
     date: '',
     section: '',
-    additional: ''
+    additional: '',
+    link:'',
   });
   const [notices, setNotices] = useState([]);
   const [editId, setEditId] = useState(null);
@@ -44,7 +45,7 @@ export default function Notice() {
       }
       fetchNotices();
       setMode('list');
-      setFormData({ title: '', extraInfo: '', date: '', section: '', additional: '' });
+      setFormData({ title: '', extraInfo: '', date: '', section: '', additional: '',link: '' });
       setEditId(null);
     } catch (error) {
       console.error("Error saving notice:", error);
@@ -57,7 +58,8 @@ export default function Notice() {
       extraInfo: notice.extraInfo,
       date: notice.date,
       section: notice.section,
-      additional: notice.additional
+      additional: notice.additional,
+      link: notice.link
     });
     setEditId(notice._id);
     setMode('add');
@@ -80,7 +82,7 @@ export default function Notice() {
           onClick={() => {
             setMode(mode === 'list' ? 'add' : 'list');
             setEditId(null);
-            setFormData({ title: '', extraInfo: '', date: '', section: '', additional: '' });
+            setFormData({ title: '', extraInfo: '', date: '', section: '', additional: '', link: '' });
           }}
           className="toggle-button"
         >
@@ -109,9 +111,9 @@ export default function Notice() {
             />
           </div>
           <div className="form-group">
-            <label>Date (Optional)</label>
+            <label>Date/Time (Optional)</label>
             <input
-              type="date"
+              type="text"
               name="date"
               value={formData.date}
               onChange={handleChange}
@@ -135,6 +137,14 @@ export default function Notice() {
               onChange={handleChange}
             />
           </div>
+          <div className="form-group">
+            <label>Any Type of Link (Optional)</label>
+            <textarea
+              name="link"
+              value={formData.link}
+              onChange={handleChange}
+            />
+          </div>
           <div className="form-actions">
             <button type="submit" className="submit-button">
               {editId ? 'Update' : 'Submit'}
@@ -143,7 +153,7 @@ export default function Notice() {
               type="button"
               onClick={() => {
                 setMode('list');
-                setFormData({ title: '', extraInfo: '', date: '', section: '', additional: '' });
+                setFormData({ title: '', extraInfo: '', date: '', section: '', additional: '', link: '' });
                 setEditId(null);
               }}
               className="cancel-button"
@@ -168,7 +178,8 @@ export default function Notice() {
                     </div>
                   </div>
                   <p className="notice-section">Section: {notice.section}</p>
-                  {notice.date && <p className="notice-date">Date: {new Date(notice.date).toLocaleDateString()}</p>}
+                  {notice.date && <p className="notice-date">Date: {notice.date}</p>}
+                  {notice.link && <p className="notice-link">Link: {notice.link}</p>}
                   <p className="notice-extra">{notice.extraInfo}</p>
                   {notice.additional && <p className="notice-additional">{notice.additional}</p>}
                 </div>

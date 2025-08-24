@@ -9,7 +9,8 @@ const addNotice = async(req,res)=>{
       extraInfo:req.body.extraInfo,
       date:req.body.date,
       section:req.body.section,
-      additional:req.body.additional
+      additional:req.body.additional,
+      link:req.body.link,
 
   })
 

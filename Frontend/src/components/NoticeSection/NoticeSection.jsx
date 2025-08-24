@@ -31,22 +31,40 @@ const NoticeSection = () => {
   return (
     <section id="notices" className="notice-section">
       <h2>📢 Important Notices</h2>
-      <ul>
+      <div className="notices-container">
         {notices.map(notice => (
-          <li key={notice._id} className={`notice-card notice-sec-${notice.section.toLowerCase()}`}>
-            <h4>{notice.title}</h4>
-            {notice.extraInfo && <p>{notice.extraInfo}</p>}
-            {notice.date && <p>Date: {notice.date}</p>}
-            <span className="section-badge">Section {notice.section}</span>
-            {notice.additional && (
-              <p 
-                className="additional-info"
-                dangerouslySetInnerHTML={createSanitizedHTML(`📝 ${notice.additional}`)}
-              />
-            )}
-          </li>
+          <div key={notice._id} className={`notice-card notice-sec-${notice.section.toLowerCase()}`}>
+            <div className="notice-header">
+              <h4 className="notice-title">{notice.title}</h4>
+              <span className="section-badge">Section {notice.section}</span>
+            </div>
+            
+            <div className="notice-content">
+              {notice.extraInfo && <p className="extra-info">{notice.extraInfo}</p>}
+              {notice.date && <p className="notice-date">📅 {notice.date}</p>}
+              
+              {notice.additional && (
+                <div 
+                  className="additional-info"
+                  dangerouslySetInnerHTML={createSanitizedHTML(`📝 ${notice.additional}`)}
+                />
+              )}
+
+              {notice.link && (
+  <a 
+    href={notice.link.startsWith('http') ? notice.link : `https://${notice.link}`} 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="notice-link-button"
+  >
+    🔗 Click Here!
+  </a>
+)}
+
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </section>
   );
 };

@@ -5,7 +5,8 @@ const noticeSchema = new mongoose.Schema({
   extraInfo:{type:String},
   date:{type:String},
   section:{type:String,required:true},
-  additional:{type:String}
+  additional:{type:String},
+  link:{type:String}
 })
 
 const noticeModel= mongoose.models.notice || mongoose.model("notice",noticeSchema);
